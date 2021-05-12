@@ -1,12 +1,9 @@
 name: CI
-
-# Run this workflow every time a commit is pushed to main or a pull request is opened against main
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
 jobs:
     build:
         name: Call Azure Pipeline
@@ -16,5 +13,5 @@ jobs:
           uses: Azure/pipelines@v1
           with:
             azure-devops-project-url: https://dev.azure.com/Wellcentive/PInC
-            azure-pipeline-name: 'UC_SDK_TESTAPP'
+            azure-pipeline-name: UC_SDK_TESTAPP
             azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
